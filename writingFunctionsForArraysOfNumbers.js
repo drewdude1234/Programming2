@@ -1,10 +1,26 @@
+var jennysNumber = [8, 6, 7, 5, 13, 0, 9];
+
+biggestNumberInArray();
+averageOfNumbersInArray();
+
 function biggestNumberInArray(arrayToCheck) {
-	//write a function that returns the largest number in an array
+	var bigNum = jennysNumber[0];
+	for (var counter = 1; counter < jennysNumber.length; counter++) {
+		if (jennysNumber[counter] > bigNum) {
+			bigNum = jennysNumber[counter];
+		} else {
+		    bigNum = bigNum;
+		}
+	}
+	console.log(bigNum);
 }
 
-//write another function that returns the average of the numbers in an array
-//rounded to two decimal places
 
-var jennysNumber = [8, 6, 7, 5, 3, 0, 9];
-console.log(biggestNumberInArray(jennysNumber));
-console.log(averageOfNumbersInArray(jennysNumber));
+function averageOfNumbersInArray(arrayToCheck) {
+	var avgNum = jennysNumber[0];
+	for (var counter = 1; counter < jennysNumber.length; counter++) {
+	  avgNum = avgNum + jennysNumber[counter];
+	}
+    avgNum = (avgNum / jennysNumber.length).toFixed(2);
+    console.log(avgNum);
+}
